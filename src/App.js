@@ -1,6 +1,13 @@
 import React from 'react';
 import './App.css';
 import brand_logo from './assets/BGfitness_logo_dark_mode_cropped.png';
+import Reviews from './reviews';
+
+const reviews = [
+  { text: 'This product is fantastic! Highly recommend.', author: 'John Doe' },
+  { text: 'Amazing quality and great customer service.', author: 'Jane Smith' },
+  { text: 'Exceeded my expectations in every way.', author: 'Sam Johnson' }
+];
 
 function App() {
   return (
@@ -37,7 +44,7 @@ function App() {
         </section>
         <section id="reviews">
           <h1>Reviews</h1>
-          <p>Review 1 (quote box)</p>
+          <Reviews reviews={reviews}/>
         </section>
         <section id="contact">
           <h1>Contact</h1>
