@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './reviews.css';
 
 const Reviews = ({ reviews }) => {
@@ -26,16 +26,29 @@ const Reviews = ({ reviews }) => {
     }
   };
 
-  const scrollLeft = () => {
-    trackRef.current.scrollBy({
-      left: -trackRef.current.offsetWidth,
-      behavior: "smooth",
-    });
-  };
+  const scrollToNext = (direction) => {
+    const track = trackRef.current;
+    const boxWidth = track.querySelector(".review-box").offsetWidth; // Get the width of one quote
+    const gap = parseFloat(getComputedStyle(track).gap) || 0; // Account for gap between boxes
 
-  const scrollRight = () => {
-    trackRef.current.scrollBy({
-      left: trackRef.current.offsetWidth,
+    const totalScrollWidth = track.scrollWidth; // Total scrollable width
+    const visibleWidth = track.offsetWidth; // Width of the carousel window
+    const maxScrollLeft = totalScrollWidth - visibleWidth; // Max scroll position
+
+    // Calculate current scroll position
+    const currentScroll = track.scrollLeft;
+
+    // Determine next scroll position
+    let newScrollLeft;
+    if (direction === "right") {
+      newScrollLeft = Math.min(currentScroll + boxWidth + gap, maxScrollLeft);
+    } else {
+      newScrollLeft = Math.max(currentScroll - boxWidth - gap, 0);
+    }
+
+    // Scroll to the calculated position
+    track.scrollTo({
+      left: newScrollLeft,
       behavior: "smooth",
     });
   };
@@ -44,10 +57,10 @@ const Reviews = ({ reviews }) => {
     <div className="review-carousel">
 
       {/* Scroll left arrow */}
-      <button className="nav-arrow left-arrow" onClick={scrollLeft}>
+      <button className="nav-arrow left-arrow" onClick={() => scrollToNext("left")}>
         &larr;
       </button>
-      
+
       <div
         className="review-track"
         ref={trackRef}
@@ -61,7 +74,6 @@ const Reviews = ({ reviews }) => {
             </blockquote>
           </div>
         ))}
-        <button class="nav-arrow right-arrow">&rarr;</button>
       </div>
 
       {/* Navigation Dots */}
@@ -76,7 +88,7 @@ const Reviews = ({ reviews }) => {
       </div>
 
       {/* Scroll right arrow */}
-      <button className="nav-arrow right-arrow" onClick={scrollRight}>
+      <button className="nav-arrow right-arrow" onClick={() => scrollToNext("right")}>
         &rarr;
       </button>
     </div>
