@@ -54,13 +54,11 @@ const Reviews = ({ reviews }) => {
         onClick={() => scrollToNext('left')}
         disabled={currentIndex === 0}
       >
-        &larr;
+        <i class="fa-solid fa-arrow-left"></i>
       </button>
 
       {/* Review Track */}
-      <div
-        className="review-track-wrapper"
-      >
+      <div className="review-track-wrapper">
         <div 
           className="review-track"
           onScroll={handleScroll} // Update dots on manual scroll
@@ -83,7 +81,7 @@ const Reviews = ({ reviews }) => {
         onClick={() => scrollToNext('right')}
         disabled={currentIndex === reviews.length - 1}
       >
-        &rarr;
+        <i class="fa-solid fa-arrow-right"></i>
       </button>
 
       {/* Navigation Dots */}

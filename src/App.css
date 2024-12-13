@@ -23,11 +23,39 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding-top: 0px;
+  padding-bottom: 0.5rem
 }
 
 .App-header img {
-  height: 20vmin;
+  height: 25vmin;
   margin: 15px;
+  max-height: 10rem;
+}
+
+.quick-contact {
+  align-items: center;
+  background-color: #282c34;
+}
+
+.quick-contact p {
+  padding: 0.5rem;
+  margin: 0;
+  position: flex;
+  font-size: clamp(14px, 4vw, 20px); /* Responsive font size */
+  color: white;
+  position: relative;
+  display: inline-block; /* Shrink the p tag to the size of its text */
+}
+
+/* Adds a divider between navbar and quick contact info */
+.quick-contact p::before {
+  content: ""; /* Empty content for the line */
+  position: absolute;
+  top: 0; /* Place it exactly above the p tag */
+  left: 0;
+  width: 100%; /* Match the width of the p tag */
+  height: 1px; /* Thickness of the line */
+  background-color: #aaaaaa; /* Line color */
 }
 
 .App-link {
@@ -45,6 +73,9 @@
 
 body {
   font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 header {
@@ -56,6 +87,31 @@ header nav a {
   color: white;
   margin-right: 15px;
   text-decoration: none;
+}
+
+/* TODO: Fix off-centre navbar contents */
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Spread items evenly */
+  padding: 0; /* Removes default padding */
+  margin: 0;
+  background-color: #282c34;
+}
+
+.navbar-item {
+  flex-grow: 1; /* Allow items to grow and share available space */
+  flex-shrink: 1; /* Allow items to shrink if needed */
+  min-width: 25px;
+  max-width: 700px;
+  text-align: center;
+  padding: 0.1rem;
+  color: white;
+  text-decoration: none;
+  font-size: clamp(16px, 4vw, 24px); /* Responsive font size */
+  overflow: hidden; /* Prevent text overflow */
+  white-space: nowrap; /* Prevent wrapping */
+  text-overflow: ellipsis; /* Add ellipsis for truncated text */
 }
 
 section {
@@ -83,8 +139,29 @@ section h1 {
 
 .container {
   margin-inline: 0vh;
+  min-height: 100vh;    
+  display: flex;
+  flex-direction: column;
 }
 
 p {
   font-size: large;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    position: static;
+    padding-block: 0.1rem;
+  }
+}
+
+.reviews {
+  margin-bottom: 0; /* Remove unnecessary bottom margin */
+  padding-bottom: 0; /* Ensure no extra padding at the bottom */
 }

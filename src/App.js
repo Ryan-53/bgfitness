@@ -4,12 +4,12 @@ import brand_logo from './assets/BGfitness_logo_dark_mode_cropped.png';
 import Reviews from './reviews';
 
 const reviews = [
-  { text: 'This product is fantastic! Highly recommend. This product is fantastic! Highly recommend.', author: 'John Doe' },
-  { text: 'Amazing quality and great customer service.', author: 'Jane Smith' },
-  { text: 'Exceeded my expectations in every way.', author: 'Sam Johnson' },
-  { text: 'This product is fantastic! Highly recommend. This product is fantastic! Highly recommend.', author: 'John Doe' },
-  { text: 'Amazing quality and great customer service.', author: 'Jane Smith' },
-  { text: 'Exceeded my expectations in every way.', author: 'Sam Johnson' }
+  { text: '"Review 1"', author: 'Reviewer 1' },
+  { text: '"Amazing quality and great customer service."', author: 'Reviewer 2' },
+  { text: '"Exceeded my expectations in every way."', author: 'Reviewer 3' },
+  { text: '"This product is fantastic! Highly recommend. This product is fantastic! Highly recommend.This product is fantastic! Highly recommend. This product is fantastic! Highly recommend."', author: 'Reviewer 4' },
+  { text: '"Amazing quality and great customer service."', author: 'Reviewer 5' },
+  { text: '"Exceeded my expectations in every way."', author: 'Reviewer 6' }
 ];
 
 function App() {
@@ -17,23 +17,34 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={brand_logo} alt="business logo"></img>
+        {/* TODO: Font */}
         <nav>
-          <a href="#about">About me</a>
-          <a href="#services">Services</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" className='navbar-item'>About me</a>
+          <a href="#services" className='navbar-item'>Services</a>
+          <a href="#reviews" className='navbar-item'>Testimonials</a>
+          <a href="#contact" className='navbar-item'>Contact</a>
         </nav>
       </header>
-      <div class="container">
+      <div className="container">
+        <div className="quick-contact">
+          {/* TODO: Links */}
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            &nbsp; babs@bgfitness.co.uk &nbsp;|&ensp;
+            <i class="fa-solid fa-phone"></i>
+            &nbsp; 07977 211484
+          </p>
+        </div>
+        {/* TODO: Add in picture to top-right of section*/}
         <section id="about">
           <h1>About Me</h1>
-          <div class="modal-body row">
-            <div class="col-md-6">
+          <div className="modal-body row">
+            <div className="col-md-6">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mauris ipsum, molestie id gravida vitae, porta non ipsum. Mauris a diam eu lacus scelerisque blandit nec ut erat. Vestibulum nec tincidunt nulla. Nunc vel enim libero. Fusce lectus nunc, porttitor facilisis leo eu, varius sollicitudin dui. Proin eget sollicitudin lectus. Morbi gravida a mi eget vehicula. Aenean consectetur tellus at nulla hendrerit efficitur. Nullam gravida consequat justo vel iaculis. 
               </p>
             </div>
-            <div class="col-md-6">
+            <div className="col-md-6">
               Picture
             </div>
           </div>
@@ -46,15 +57,27 @@ function App() {
           <p>Personal training</p>
         </section>
         <section id="reviews">
-          <h1>Reviews</h1>
+          <h1>Testimonials</h1>
           <Reviews reviews={reviews}/>
         </section>
-        <section id="contact">
-          <h1>Contact</h1>
-          <p>Email: babs@bgfitness.co.uk</p>
-          <p>Mobile: (+44) 07977 211484</p>
-        </section>
       </div>
+        <div className="site-footer" id="contact">
+          <h1>Contact Info</h1>
+          {/* TODO: Link to email */}
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            &nbsp; babs@bgfitness.co.uk
+          </p>
+          {/* TODO: Link to call */}
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            &nbsp; 07977 211484
+          </p>
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            &nbsp; Audley, Stoke-on-Trent
+          </p>
+        </div>
     </div>
   );
 }
