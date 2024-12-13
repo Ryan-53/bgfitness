@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './reviews.css';
 
 const Reviews = ({ reviews }) => {
@@ -17,7 +17,7 @@ const Reviews = ({ reviews }) => {
     }
   };
 
-  // Update current index on scroll
+  // Update the index on scroll
   const handleScroll = () => {
     if (trackRef.current) {
       const reviewBoxWidth = trackRef.current.children[0].offsetWidth;
@@ -26,55 +26,65 @@ const Reviews = ({ reviews }) => {
     }
   };
 
+  // Scroll to the next/previous review
   const scrollToNext = (direction) => {
-    const track = trackRef.current;
-    const boxWidth = track.querySelector(".review-box").offsetWidth; // Get the width of one quote
-    const gap = parseFloat(getComputedStyle(track).gap) || 0; // Account for gap between boxes
-
-    const totalScrollWidth = track.scrollWidth; // Total scrollable width
-    const visibleWidth = track.offsetWidth; // Width of the carousel window
-    const maxScrollLeft = totalScrollWidth - visibleWidth; // Max scroll position
-
-    // Calculate current scroll position
-    const currentScroll = track.scrollLeft;
-
-    // Determine next scroll position
-    let newScrollLeft;
-    if (direction === "right") {
-      newScrollLeft = Math.min(currentScroll + boxWidth + gap, maxScrollLeft);
-    } else {
-      newScrollLeft = Math.max(currentScroll - boxWidth - gap, 0);
-    }
-
-    // Scroll to the calculated position
-    track.scrollTo({
-      left: newScrollLeft,
-      behavior: "smooth",
-    });
+    const newIndex =
+      direction === 'right'
+        ? Math.min(currentIndex + 1, reviews.length - 1)
+        : Math.max(currentIndex - 1, 0);
+    scrollToIndex(newIndex); // Navigate to the next or previous review
   };
+
+  // Listen for resize to hide arrows on small screens
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setCurrentIndex(0); // Reset to the first review on mobile
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="review-carousel">
-
-      {/* Scroll left arrow */}
-      <button className="nav-arrow left-arrow" onClick={() => scrollToNext("left")}>
+      {/* Left Arrow */}
+      <button
+        className="nav-arrow left-arrow"
+        onClick={() => scrollToNext('left')}
+        disabled={currentIndex === 0}
+      >
         &larr;
       </button>
 
+      {/* Review Track */}
       <div
-        className="review-track"
-        ref={trackRef}
-        onScroll={handleScroll}
+        className="review-track-wrapper"
       >
-        {reviews.map((review, index) => (
-          <div className="review-box" key={index}>
-            <blockquote>
-              <p>{review.text}</p>
-              <footer>— {review.author}</footer>
-            </blockquote>
-          </div>
-        ))}
+        <div 
+          className="review-track"
+          onScroll={handleScroll} // Update dots on manual scroll
+          ref={trackRef}
+        >
+          {reviews.map((review, index) => (
+            <div className="review-box" key={index}>
+              <blockquote>
+                <p>{review.text}</p>
+                <footer>— {review.author}</footer>
+              </blockquote>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Right Arrow */}
+      <button
+        className="nav-arrow right-arrow"
+        onClick={() => scrollToNext('right')}
+        disabled={currentIndex === reviews.length - 1}
+      >
+        &rarr;
+      </button>
 
       {/* Navigation Dots */}
       <div className="review-dots">
@@ -82,17 +92,12 @@ const Reviews = ({ reviews }) => {
           <span
             key={index}
             className={`dot ${currentIndex === index ? 'active' : ''}`}
-            onClick={() => scrollToIndex(index)}
+            onClick={() => scrollToIndex(index)} // Scroll when dot is clicked
           />
         ))}
       </div>
-
-      {/* Scroll right arrow */}
-      <button className="nav-arrow right-arrow" onClick={() => scrollToNext("right")}>
-        &rarr;
-      </button>
     </div>
   );
 };
 
-export default Reviews
+export default Reviews;
