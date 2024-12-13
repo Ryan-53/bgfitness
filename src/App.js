@@ -4,7 +4,10 @@ import brand_logo from './assets/BGfitness_logo_dark_mode_cropped.png';
 import Reviews from './reviews';
 
 const reviews = [
-  { text: 'This product is fantastic! Highly recommend.', author: 'John Doe' },
+  { text: 'This product is fantastic! Highly recommend. This product is fantastic! Highly recommend.', author: 'John Doe' },
+  { text: 'Amazing quality and great customer service.', author: 'Jane Smith' },
+  { text: 'Exceeded my expectations in every way.', author: 'Sam Johnson' },
+  { text: 'This product is fantastic! Highly recommend. This product is fantastic! Highly recommend.', author: 'John Doe' },
   { text: 'Amazing quality and great customer service.', author: 'Jane Smith' },
   { text: 'Exceeded my expectations in every way.', author: 'Sam Johnson' }
 ];
