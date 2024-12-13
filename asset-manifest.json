@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/bgfitness/static/css/main.c5bb90eb.css",
-    "main.js": "/bgfitness/static/js/main.a616dac0.js",
+    "main.css": "/bgfitness/static/css/main.22e8dfdf.css",
+    "main.js": "/bgfitness/static/js/main.9c3294d1.js",
     "static/js/488.48418139.chunk.js": "/bgfitness/static/js/488.48418139.chunk.js",
     "static/media/BGfitness_logo_dark_mode_cropped.png": "/bgfitness/static/media/BGfitness_logo_dark_mode_cropped.8674469b359978e13e19.png",
     "index.html": "/bgfitness/index.html",
-    "main.c5bb90eb.css.map": "/bgfitness/static/css/main.c5bb90eb.css.map",
-    "main.a616dac0.js.map": "/bgfitness/static/js/main.a616dac0.js.map",
+    "main.22e8dfdf.css.map": "/bgfitness/static/css/main.22e8dfdf.css.map",
+    "main.9c3294d1.js.map": "/bgfitness/static/js/main.9c3294d1.js.map",
     "488.48418139.chunk.js.map": "/bgfitness/static/js/488.48418139.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5bb90eb.css",
-    "static/js/main.a616dac0.js"
+    "static/css/main.22e8dfdf.css",
+    "static/js/main.9c3294d1.js"
   ]
 }
