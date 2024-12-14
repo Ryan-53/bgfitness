@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #5e005e;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -27,14 +27,14 @@
 }
 
 .App-header img {
-  height: 25vmin;
+  height: 24vmin;
   margin: 15px;
   max-height: 10rem;
 }
 
 .quick-contact {
   align-items: center;
-  background-color: #282c34;
+  background-color: #5e005e;
 }
 
 .quick-contact p {
@@ -96,7 +96,7 @@ header nav a {
   justify-content: space-between; /* Spread items evenly */
   padding: 0; /* Removes default padding */
   margin: 0;
-  background-color: #282c34;
+  background-color: #5e005e;
 }
 
 .navbar-item {
@@ -123,12 +123,12 @@ section h1 {
 }
 
 #services {
-  background-color: #282c34;
+  background-color: #5e005e;
   color: white;
 }
 
 #contact {
-  background-color: #282c34;
+  background-color: #5e005e;
   color: white;
   
 }

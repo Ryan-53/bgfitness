@@ -46,6 +46,8 @@ const Reviews = ({ reviews }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // TODO: Fix flickering of nav dots and arrows when moving between 2 reviews
+
   return (
     <div className="review-carousel">
       {/* Left Arrow */}
