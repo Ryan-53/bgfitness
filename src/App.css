@@ -137,6 +137,10 @@ section h1 {
   font-size: larger;
 }
 
+#contact h1 {
+  font-size: x-large;
+}
+
 .container {
   margin-inline: 0vh;
   min-height: 100vh;    
