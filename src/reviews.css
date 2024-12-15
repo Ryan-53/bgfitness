@@ -98,7 +98,7 @@ footer {
 /* Disable arrow when at edges */
 .nav-arrow:disabled {
   opacity: 0;
-  cursor: default;
+  cursor: none;
 }
 
 /* Navigation Dots */
