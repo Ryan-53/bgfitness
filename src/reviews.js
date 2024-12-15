@@ -46,7 +46,9 @@ const Reviews = ({ reviews }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // TODO: Fix flickering of nav dots and arrows when moving between 2 reviews
+  // TODO: Fix flickering of nav dots and arrows when moving between 2
+  // reviews
+  // TODO: Change speed of swiping on mobile devices to 1 per swipe
 
   return (
     <div className="review-carousel">
