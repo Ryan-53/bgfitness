@@ -6,7 +6,7 @@
   position: relative;
   width: 100%;
   max-width: 90%; /* Optional: Limit width */
-  margin: auto; /* Center the carousel */
+  margin-inline: auto; /* Center the carousel */
 }
 
 /* Review Track Wrapper (acts as the "window") */
