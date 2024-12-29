@@ -65,33 +65,32 @@ function App() {
             <Reviews reviews={reviews}/>
           </section>
         </div>
-        {/* TODO: Fix whitespace gap between reviews and footer / footer and bottom of page (issue may be in reviews section) */}
+        
         <footer className="site-footer" id="contact">
           <h1>Contact Info</h1>
-          {/* TODO: Link to email */}
-          <a href="mailto:babs@bgfitness.co.uk">
+          <a href="mailto:babs@bgfitness.co.uk" target="_blank" rel="noopener noreferrer">
             <p>
               <i class="fa-solid fa-envelope"></i>
               &nbsp; babs@bgfitness.co.uk
             </p>  
           </a>
 
-          {/* TODO: Link to call */}
-          <a href="tel:+447977211484">
+          <a href="tel:+447977211484" target="_blank" rel="noopener noreferrer">
             <p>
               <i class="fa-solid fa-phone"></i>
               &nbsp; 07977 211484
             </p>
           </a>
 
-          <a href="https://wa.me/447977211484?text=Hi,%20this%20is%20a%20test%20message">
+          {/* TODO: Change this placeholder message */}
+          <a href="https://wa.me/447977211484?text=Hi,%20this%20is%20a%20test%20message" target="_blank" rel="noopener noreferrer">
             <p>
               <i class="fa-brands fa-whatsapp"></i>
               &nbsp; 07977 211484
             </p>
           </a>
 
-          <a href="https://www.google.com/maps/place/Audley,+Stoke-on-Trent/@53.0513635,-2.3303374,3666m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a5dc724ae25bf:0x464ffb78e0dbb010!8m2!3d53.054895!4d-2.306407!16zL20vMDkzNmJr?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">
+          <a href="https://www.google.com/maps/place/Audley,+Stoke-on-Trent/@53.0513635,-2.3303374,3666m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a5dc724ae25bf:0x464ffb78e0dbb010!8m2!3d53.054895!4d-2.306407!16zL20vMDkzNmJr?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
             <p>
               <i class="fa-solid fa-location-dot"></i>
               &nbsp; Audley, Stoke-on-Trent
