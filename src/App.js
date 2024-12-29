@@ -26,16 +26,23 @@ function App() {
       <div className="container">
         <div id="content-wrap">
           <div className="quick-contact">
-            {/* TODO: Links */}
-            <p>
-              <i class="fa-solid fa-envelope"></i>
-              &nbsp; babs@bgfitness.co.uk &nbsp;|&ensp;
-              <i class="fa-solid fa-phone"></i>
-              &nbsp; 07977 211484
-            </p>
+            <a href="mailto:babs@bgfitness.co.uk">
+              <p>
+                <i class="fa-solid fa-envelope"></i>
+                &nbsp; babs@bgfitness.co.uk &nbsp;|
+              </p>
+            </a>
+
+            <a href="tel:+447977211484">
+              <p>
+                <i class="fa-solid fa-phone"></i>
+                &nbsp; 07977 211484
+              </p>
+            </a>
           </div>
           {/* TODO: Add in picture to top-right of section*/}
           <section id="about">
+            <div class="paragraph">
             <h1>About Me</h1>
             <div className="modal-body row">
               <div className="col-md-6">
@@ -47,6 +54,7 @@ function App() {
             <p>
               Proin tristique placerat aliquam. Maecenas interdum nec lectus malesuada scelerisque. In vitae massa eu dolor porta ultrices. Sed molestie, mi accumsan maximus rhoncus, neque eros pellentesque ipsum, sit amet porttitor sem enim sed augue. Sed faucibus lorem nibh, finibus interdum massa blandit et. Praesent scelerisque turpis sed aliquet sodales. Praesent ultricies non sem eget gravida. Phasellus rutrum odio et tristique mattis. Nulla purus augue, posuere eget sapien et, ultricies sollicitudin lorem. Sed in magna at risus vehicula dignissim non sollicitudin mi. 
             </p>
+            </div>
           </section>
           <section id="services">
             <h1>Services</h1>
@@ -61,19 +69,34 @@ function App() {
         <footer className="site-footer" id="contact">
           <h1>Contact Info</h1>
           {/* TODO: Link to email */}
-          <p>
-            <i class="fa-solid fa-envelope"></i>
-            &nbsp; babs@bgfitness.co.uk
-          </p>
+          <a href="mailto:babs@bgfitness.co.uk">
+            <p>
+              <i class="fa-solid fa-envelope"></i>
+              &nbsp; babs@bgfitness.co.uk
+            </p>  
+          </a>
+
           {/* TODO: Link to call */}
-          <p>
-            <i class="fa-solid fa-phone"></i>
-            &nbsp; 07977 211484
-          </p>
-          <p>
-            <i class="fa-solid fa-location-dot"></i>
-            &nbsp; Audley, Stoke-on-Trent
-          </p>
+          <a href="tel:+447977211484">
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              &nbsp; 07977 211484
+            </p>
+          </a>
+
+          <a href="https://wa.me/447977211484?text=Hi,%20this%20is%20a%20test%20message">
+            <p>
+              <i class="fa-brands fa-whatsapp"></i>
+              &nbsp; 07977 211484
+            </p>
+          </a>
+
+          <a href="https://www.google.com/maps/place/Audley,+Stoke-on-Trent/@53.0513635,-2.3303374,3666m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a5dc724ae25bf:0x464ffb78e0dbb010!8m2!3d53.054895!4d-2.306407!16zL20vMDkzNmJr?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">
+            <p>
+              <i class="fa-solid fa-location-dot"></i>
+              &nbsp; Audley, Stoke-on-Trent
+            </p>
+          </a>
         </footer>
       </div>
         

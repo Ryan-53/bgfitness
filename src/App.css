@@ -115,6 +115,15 @@ header nav a {
   text-overflow: ellipsis; /* Add ellipsis for truncated text */
 }
 
+.paragraph {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.paragraph p {
+  text-align: left;
+}
+
 section {
   padding: 15px;
 }
@@ -125,6 +134,7 @@ section h1 {
 
 #about {
   background-color: white;
+  margin: auto;
 }
 
 #services {
@@ -181,6 +191,11 @@ p {
 
 .site-footer p {
   margin: 0.5rem 0;
+  color: white;
+}
+
+.site-footer a {
+  text-decoration: none;
 }
 
 .site-footer h1 {
