@@ -27,7 +27,7 @@
 }
 
 .App-header img {
-  height: 24vmin;
+  height: 28vmin;
   margin: 15px;
   max-height: 10rem;
 }
@@ -137,6 +137,10 @@ section h1 {
   margin: auto;
 }
 
+#about h1 {
+  color: #5e005e;
+}
+
 #services {
   background-color: #5e005e;
   color: white;
@@ -146,10 +150,13 @@ section h1 {
   background-color: white;
 }
 
+#reviews h1 {
+  color: #5e005e;
+}
+
 #contact {
   background-color: #5e005e;
   color: white;
-  
 }
 
 #contact p {

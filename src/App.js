@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import brand_logo from './assets/BGfitness_logo_transparent.png';
+import brand_logo from './assets/BGfitness_logo_white_PT.png';
 import Reviews from './reviews';
 
 const reviews = [
@@ -26,14 +26,14 @@ function App() {
       <div className="container">
         <div id="content-wrap">
           <div className="quick-contact">
-            <a href="mailto:babs@bgfitness.co.uk">
+            <a href="mailto:babs@bgfitness.co.uk" target="_blank" rel="noopener noreferrer">
               <p>
                 <i class="fa-solid fa-envelope"></i>
                 &nbsp; babs@bgfitness.co.uk &nbsp;|
               </p>
             </a>
 
-            <a href="tel:+447977211484">
+            <a href="tel:+447977211484" target="_blank" rel="noopener noreferrer">
               <p>
                 <i class="fa-solid fa-phone"></i>
                 &nbsp; 07977 211484
@@ -47,13 +47,16 @@ function App() {
             <div className="modal-body row">
               <div className="col-md-6">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mauris ipsum, molestie id gravida vitae, porta non ipsum. Mauris a diam eu lacus scelerisque blandit nec ut erat. Vestibulum nec tincidunt nulla. Nunc vel enim libero. Fusce lectus nunc, porttitor facilisis leo eu, varius sollicitudin dui. Proin eget sollicitudin lectus. Morbi gravida a mi eget vehicula. Aenean consectetur tellus at nulla hendrerit efficitur. Nullam gravida consequat justo vel iaculis. 
+                  Hi, I’m Babs, and I’m passionate about helping women embrace their strength, confidence, and vitality through fitness. With over 21 years of experience in the fitness industry, I’ve spent much of my career leading group exercise classes and empowering others to achieve their health and wellness goals.
+                </p>
+                <p>
+                  I specialise in working with women aged 40 and above, helping them navigate the unique challenges and opportunities that come with this stage of life. Whether you’re looking to build strength, improve flexibility, boost energy, or simply feel like the best version of yourself, I’m here to guide and support you every step of the way.
+                </p>
+                <p>
+                  Fitness isn’t just about looking good, it’s about feeling good, living fully, and taking care of the incredible body you have. My approach combines expert knowledge with personalized attention to ensure you get the results you’re looking for in a fun, welcoming, and supportive environment.
                 </p>
               </div>
             </div>
-            <p>
-              Proin tristique placerat aliquam. Maecenas interdum nec lectus malesuada scelerisque. In vitae massa eu dolor porta ultrices. Sed molestie, mi accumsan maximus rhoncus, neque eros pellentesque ipsum, sit amet porttitor sem enim sed augue. Sed faucibus lorem nibh, finibus interdum massa blandit et. Praesent scelerisque turpis sed aliquet sodales. Praesent ultricies non sem eget gravida. Phasellus rutrum odio et tristique mattis. Nulla purus augue, posuere eget sapien et, ultricies sollicitudin lorem. Sed in magna at risus vehicula dignissim non sollicitudin mi. 
-            </p>
             </div>
           </section>
           <section id="services">
@@ -83,7 +86,7 @@ function App() {
           </a>
 
           {/* TODO: Change this placeholder message */}
-          <a href="https://wa.me/447977211484?text=Hi,%20this%20is%20a%20test%20message" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/447977211484?text=Hi,%20I'd%20love%20to%20find%20out%20more%20about%20what%20Personal%20Training%20services%20you%20have%20to%20offer!" target="_blank" rel="noopener noreferrer">
             <p>
               <i class="fa-brands fa-whatsapp"></i>
               &nbsp; 07977 211484
