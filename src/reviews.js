@@ -4,6 +4,9 @@ import './reviews.css';
 const Reviews = ({ reviews }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const trackRef = useRef(null);
+  const [isSwiping, setIsSwiping] = useState(false);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
 
   // Scroll to the selected review
   const scrollToIndex = (index) => {
@@ -17,8 +20,11 @@ const Reviews = ({ reviews }) => {
     }
   };
 
-  // Update the index on scroll
+  // Update the index on scroll (for non-touch devices)
   const handleScroll = () => {
+    // Skip handling during touch gestures
+    if (isSwiping) return;
+    
     if (trackRef.current) {
       const reviewBoxWidth = trackRef.current.children[0].offsetWidth;
       const newIndex = Math.round(trackRef.current.scrollLeft / reviewBoxWidth);
@@ -35,20 +41,84 @@ const Reviews = ({ reviews }) => {
     scrollToIndex(newIndex); // Navigate to the next or previous review
   };
 
+  // Touch event handlers
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    setIsSwiping(true);
+    
+    // Prevent default scroll behavior when touch starts
+    e.preventDefault();
+  };
+
+  const handleTouchMove = (e) => {
+    if (!touchStartX.current) return;
+    touchEndX.current = e.touches[0].clientX;
+    
+    // Optional: add visual feedback during swiping if desired
+  };
+
+  const handleTouchEnd = (e) => {
+    if (!touchStartX.current || !touchEndX.current) {
+      setIsSwiping(false);
+      return;
+    }
+    
+    const diffX = touchStartX.current - touchEndX.current;
+    
+    // Check if the swipe was significant enough (more than 50px)
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0 && currentIndex < reviews.length - 1) {
+        // Swipe left -> move right
+        scrollToNext('right');
+      } else if (diffX < 0 && currentIndex > 0) {
+        // Swipe right -> move left
+        scrollToNext('left');
+      } else {
+        // We're at an end, snap back to current position
+        scrollToIndex(currentIndex);
+      }
+    } else {
+      // Small movement, snap back to current position
+      scrollToIndex(currentIndex);
+    }
+    
+    // Reset touch tracking
+    touchStartX.current = null;
+    touchEndX.current = null;
+    
+    // Wait for animation to complete before allowing new swipes
+    setTimeout(() => {
+      setIsSwiping(false);
+    }, 300);
+  };
+
+  // Disable scrolling on the track element
+  useEffect(() => {
+    const preventScroll = (e) => {
+      if (e.target === trackRef.current || trackRef.current.contains(e.target)) {
+        e.preventDefault();
+      }
+    };
+    
+    // Add event listeners for mobile devices
+    document.addEventListener('touchmove', preventScroll, { passive: false });
+    
+    return () => {
+      document.removeEventListener('touchmove', preventScroll);
+    };
+  }, []);
+
   // Listen for resize to hide arrows on small screens
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
         setCurrentIndex(0); // Reset to the first review on mobile
+        scrollToIndex(0);
       }
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  // TODO: Fix flickering of nav dots and arrows when moving between 2
-  // reviews on desktop
-  // TODO: Change speed of swiping on mobile devices to 1 per swipe
 
   return (
     <div className="review-carousel">
@@ -58,15 +128,18 @@ const Reviews = ({ reviews }) => {
         onClick={() => scrollToNext('left')}
         disabled={currentIndex === 0}
       >
-        <i class="fa-solid fa-arrow-left"></i>
+        <i className="fa-solid fa-arrow-left"></i>
       </button>
 
       {/* Review Track */}
       <div className="review-track-wrapper">
         <div 
           className="review-track"
-          onScroll={handleScroll} // Update dots on manual scroll
           ref={trackRef}
+          onScroll={handleScroll}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {reviews.map((review, index) => (
             <div className="review-box" key={index}>
@@ -85,7 +158,7 @@ const Reviews = ({ reviews }) => {
         onClick={() => scrollToNext('right')}
         disabled={currentIndex === reviews.length - 1}
       >
-        <i class="fa-solid fa-arrow-right"></i>
+        <i className="fa-solid fa-arrow-right"></i>
       </button>
 
       {/* Navigation Dots */}
