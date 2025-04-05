@@ -47,7 +47,7 @@ const Reviews = ({ reviews }) => {
   }, []);
 
   // TODO: Fix flickering of nav dots and arrows when moving between 2
-  // reviews
+  // reviews on desktop
   // TODO: Change speed of swiping on mobile devices to 1 per swipe
 
   return (

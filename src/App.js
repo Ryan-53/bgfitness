@@ -4,10 +4,11 @@ import brand_logo from './assets/BGfitness_logo_white_PT.png';
 import Reviews from './reviews';
 
 const reviews = [
-  { text: '"This personal trainer is fantastic! Highly recommend."', author: 'Reviewer 1' },
-  { text: '"Amazing quality and great customer service."', author: 'Reviewer 2' },
-  { text: '"Exceeded my expectations in every way."', author: 'Reviewer 3' },
-  { text: '"Best PT ever!"', author: 'Reviewer 4' },
+  { text: '"I have attended Babs classes for over 13 years, they are run to our strengths and capabilities and I thoroughly enjoy them. She is a brilliant instructor and would recommend her to anyone wishing to take up any form of fitness training."', author: 'Glenis' },
+  { text: '"She is very committed to everyone who joins her sessions."', author: 'Margaret S.' },
+  { text: '"I have attended Babs classes now for over 12 years and as I am now a mature person she designs the routines to suit our abilities.  Keeping our minds and bodies active it is a pleasure to attend her classes. "', author: 'Margaret B.' },
+  { text: '"I have attended Babs classes for 10 years now.  I have always found them very enjoyable and find Babs a very good instructor and very professional.  If I have any aches and pains she will always listen and advise the best way to handle them.  She makes our classes fun and I would definitely recommend her as a Personal Trainer."', author: 'Trish' },
+  { text: '"She is very caring and aware of each individual capabilities.  Babs makes exercise fun and her enthusiasm is contagious."', author: 'Mary' },
 ];
 
 function App() {
