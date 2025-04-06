@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.7d2aa020.css",
-    "main.js": "/static/js/main.d175e0ab.js",
+    "main.js": "/static/js/main.bff38b36.js",
     "static/js/488.48418139.chunk.js": "/static/js/488.48418139.chunk.js",
     "static/media/BGfitness_logo_white_PT.png": "/static/media/BGfitness_logo_white_PT.bff298932d1cb3e8baa2.png",
     "index.html": "/index.html",
     "main.7d2aa020.css.map": "/static/css/main.7d2aa020.css.map",
-    "main.d175e0ab.js.map": "/static/js/main.d175e0ab.js.map",
+    "main.bff38b36.js.map": "/static/js/main.bff38b36.js.map",
     "488.48418139.chunk.js.map": "/static/js/488.48418139.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d2aa020.css",
-    "static/js/main.d175e0ab.js"
+    "static/js/main.bff38b36.js"
   ]
 }
