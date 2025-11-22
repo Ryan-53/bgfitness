@@ -146,6 +146,10 @@ section h1 {
   color: white;
 }
 
+#services p {
+  margin: 0.6em;
+}
+
 #reviews {
   background-color: white;
 }
