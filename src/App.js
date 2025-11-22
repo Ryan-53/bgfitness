@@ -62,7 +62,11 @@ function App() {
           </section>
           <section id="services">
             <h1>Services</h1>
-            <p>Personal training</p>
+            <p>Group Exercise Classes</p>
+            <p>Small Group PT Sessions</p>
+            <p>One-to-one PT Sessions</p>
+            <p>At-home PT Training</p>
+            <p>Private Studio PT Classes</p>
           </section>
           <section id="reviews">
             <h1>Testimonials</h1>
